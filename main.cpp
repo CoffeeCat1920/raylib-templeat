@@ -1,15 +1,23 @@
-#include "./include/raylib.h"
+#include "raylib/raylib.h"
+#include "core/colors.hpp"
 
-int main (int argc, char *argv[]) {
+#include "game/game.hpp"
+
+int main () {
   
   InitWindow( 64*5 , 64*5, "Animation Test");
+  Game game;
 
   while ( !WindowShouldClose() )
   { 
 
+    game.Update();
+
     BeginDrawing();
 
-    ClearBackground(GRAY);
+    ClearBackground(GRUVBOX_DARK0);
+
+    game.Draw();
 
     EndDrawing();
     
